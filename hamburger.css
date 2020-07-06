@@ -1,1 +1,81 @@
+/* variable declarations for custom properties */
 
+:root {
+    --icon-color: black;
+    --area-size: 40px;  /* square */
+    --hamburger-length: 30px;
+    --individual-line-height: 3pt;
+    --icon-line-spread: 10px;
+    --negative-of-line-spread: -10px;
+    --icon-transition-time: 200ms;
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.icon-area-anchor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--area-size);
+    height: var(--area-size);
+    cursor: pointer;
+    opacity: 0;
+    z-index: 5;
+}
+
+.hamburger-icon-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--area-size);
+    height: var(--area-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-icon {
+    position: relative;
+    width: var(--hamburger-length);
+    height: var(--individual-line-height);
+    background-color: var(--icon-color);
+    transition: all var(--icon-transition-time) ease-out;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+    content: '';
+    position: absolute;
+    top: var(--icon-line-spread);
+    width: inherit;
+    height: inherit;
+    background-color: inherit;
+    transition: all var(--icon-transition-time) ease-out;
+}
+
+.hamburger-icon::after {
+    top: var(--negative-of-line-spread);
+}
+
+.checkbox:checked + .hamburger-icon-area > .hamburger-icon {
+    transform: rotate(45deg);
+    transition: all var(--icon-transition-time) ease-out;
+}
+
+.checkbox:checked + .hamburger-icon-area > .hamburger-icon::before,
+.checkbox:checked + .hamburger-icon-area > .hamburger-icon::after {
+    top:0;
+    transform: rotate(90deg);
+    transition: all var(--icon-transition-time) ease-out;
+}
