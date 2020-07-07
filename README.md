@@ -1,5 +1,5 @@
 # Just-Hamburger-Menu
-This snippet will create a hamburger menu under an invisible checkbox input.
+This snippet will create a hamburger menu icon under an invisible checkbox input.
 Once clicked the hamburger will change to a closed icon X with a transition
 effect.  Clicking the closed icon will transition it back to the hamburger menu icon.
 
