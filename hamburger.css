@@ -70,12 +70,11 @@ body {
 
 .checkbox:checked + .hamburger-icon-area > .hamburger-icon {
     transform: rotate(45deg);
-    transition: all var(--icon-transition-time) ease-out;
+
 }
 
 .checkbox:checked + .hamburger-icon-area > .hamburger-icon::before,
 .checkbox:checked + .hamburger-icon-area > .hamburger-icon::after {
     top:0;
     transform: rotate(90deg);
-    transition: all var(--icon-transition-time) ease-out;
 }
