@@ -58,10 +58,9 @@ body {
     content: '';
     position: absolute;
     top: var(--icon-line-spread);
-    width: inherit;
-    height: inherit;
-    background-color: inherit;
-    transition: all var(--icon-transition-time) ease-out;
+    width: var(--hamburger-length);
+    height: var(--individual-line-height);
+    background-color: var(--icon-color);
 }
 
 .hamburger-icon::after {
